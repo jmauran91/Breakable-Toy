@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BreakableToy</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash.any? %>
+      <div class="flash">
+        <div class="container">
+          <% if flash[:notice] %>
+            <%= flash[:notice] %>
+          <% end %>
+          <% if flash[:alert] %>
+            <%= flash[:alert] %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+  </body>
+</html>
