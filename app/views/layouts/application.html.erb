@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>BreakableToy</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
-  <body>
-    <% if flash.any? %>
-      <div class="flash">
-        <div class="container">
-          <% if flash[:notice] %>
-            <%= flash[:notice] %>
+<body>
+  <div class ="top-bar">
+    <div class="top-bar-right">
+      <ul class="menu">
+          <% if user_signed_in? %>
+            <li><%= link_to "My Profile", user_path(current_user) %> </li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
           <% end %>
-          <% if flash[:alert] %>
-            <%= flash[:alert] %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+      </ul>
+    </div>
+  </div>
+  </div>
 
     <%= yield %>
 
