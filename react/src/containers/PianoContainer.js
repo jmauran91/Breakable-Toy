@@ -12,12 +12,13 @@ class PianoContainer extends React.Component {
       WHITENOTES: ['C', 'D', 'E', 'F', 'G', 'A', 'B',],
       BLACKNOTES: ['Cs', 'Ds', 'Fs', 'Gs', 'As'],
       NOTES: ['C', 'Cs', 'D', 'Ds', 'E', 'F', 'Fs', 'G', 'Gs', 'A', 'As', 'B'],
-      KEYCODES: [65, 87, 83, 69, 69, 70, 71, 84, 72, 89, 85, 74, 75 ],
+      KEYCODES: [65, 87, 83, 69, 68, 70, 71, 84, 72, 89, 74, 85, 75 ],
       /*          A   W   S   E   D   F   G   T   H   Y   U   J   K  */
       whiteKeys: [],
       blackKeys: [],
       the_sounds: [],
-      keypress_sounds: []
+      keypress_sounds: [],
+      octave_keypress_sounds: []
     }
     this.handleKeyClick = this.handleKeyClick.bind(this)
 
@@ -27,6 +28,7 @@ class PianoContainer extends React.Component {
     var piano_sounds_holder = document.getElementsByClassName('set');
     var soundlist = [];
     var key_soundlist = [];
+    var octave_key_soundlist = [];
     $([...Array(37)].map((key, i) => {
       var audio = new Audio();
       audio.src = `https://s3.amazonaws.com/ganonbucket91/39${159+i}__jobro__piano-ff-0${12+i}.mp3`
@@ -34,27 +36,12 @@ class PianoContainer extends React.Component {
       document.body.appendChild(audio)
     }))
     key_soundlist = soundlist.slice(12,25);
+    octave_key_soundlist = soundlist.slice(0,13);
     this.setState({ the_sounds: soundlist })
     this.setState({ keypress_sounds: key_soundlist })
-    debugger;
-    this.state.keypress_sounds.map((sound, i) => {
-      debugger;
-      document.body.addEventListener('keydown', function(){
-        if (event.keyCode == KEYCODES[i]) {
-          if ( sound.paused == false ){
-            sound.pause();
-            sound.currentTime = 0
-            sound.play();
-          }
-          else {
-            sound.play();
-          }
-        }
-      }, false)
-    })
-  }
+    this.setState({ octave_keypress_sounds: octave_key_soundlist })
 
-  // new fucntion will go here
+  }
 
   handleKeyClick(event){
       var playsound = this.state.the_sounds[event.target.value]
@@ -66,7 +53,7 @@ class PianoContainer extends React.Component {
       else {
         playsound.play();
       }
-      debugger;
+
   }
 
 
@@ -118,7 +105,7 @@ class PianoContainer extends React.Component {
         }
         return(
           <li className="black {black_keynote}" onClick={this.handleKeyClick}
-                 value={i}>
+                  value={i}>
           <KeyTile
           key={(i)}
           id={(i)}
@@ -130,6 +117,36 @@ class PianoContainer extends React.Component {
         )
       }
     })
+
+    var keycodes_for_this = this.state.KEYCODES
+    var sound_for_keypress = this.state.keypress_sounds
+    var octave_sound_for_keypress = this.state.octave_keypress_sounds
+    document.body.addEventListener('keydown', function(){
+      sound_for_keypress.map((sound, i) => {
+          if (!event.ctrlKey && event.keyCode == keycodes_for_this[i]) {
+            if ( sound.paused == false ){
+              sound.pause();
+              sound.currentTime = 0
+              sound.play();
+            }
+            else {
+              sound.play();
+            }
+          }
+        })
+      octave_sound_for_keypress.map((sound, i) => {
+        if(event.ctrlKey && event.keyCode == keycodes_for_this[i]){
+          if ( sound.paused == false ){
+            sound.pause();
+            sound.currentTime = 0
+            sound.play();
+          }
+          else {
+            sound.play();
+          }
+        }
+      })
+    }, false)
 
     return(
 
