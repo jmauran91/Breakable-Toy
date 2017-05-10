@@ -12,11 +12,17 @@ class IndexContainer extends React.Component {
   render(){
     return(
       <div>
-      This is the IndexContainer Page
-      <PianoContainer />
+      <div className="large-12 columns index_holder">
+      <h1 id="index_header"> This is the IndexContainer Page</h1>
+      <br />
+      <div className="large-8 columns" id="piano_holder">
+      <PianoContainer/>
       </div>
-
-
+      </div>
+      <div className="large-12 columns" id="directions">
+      <span> Use your mouse to play! </span>
+      </div>
+      </div>
     )
   }
 }
