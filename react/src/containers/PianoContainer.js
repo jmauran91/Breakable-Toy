@@ -54,6 +54,8 @@ class PianoContainer extends React.Component {
     })
   }
 
+  // new fucntion will go here
+
   handleKeyClick(event){
       var playsound = this.state.the_sounds[event.target.value]
       if ( playsound.paused == false ){
