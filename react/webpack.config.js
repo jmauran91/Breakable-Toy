@@ -12,15 +12,7 @@ var config = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel'
-      },
-      {
-        test: /\.(mp3)$/,
-        loader: 'file-loader',
-        options: {
-            name: '[name][md5:hash].[mp3]',
-            outputPath: "webpack-sounds"
-          }
-      },
+      }
     ]
   },
   devtool: 'eval-source-map'
