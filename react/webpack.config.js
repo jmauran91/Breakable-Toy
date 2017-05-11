@@ -13,6 +13,7 @@ var config = {
         exclude: /node_modules/,
         loader: 'babel'
       }
+
     ]
   },
   devtool: 'eval-source-map'
