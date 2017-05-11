@@ -21,7 +21,6 @@ class PianoContainer extends React.Component {
       octave_keypress_sounds: []
     }
     this.handleKeyClick = this.handleKeyClick.bind(this)
-
   }
 
   componentDidMount(){
@@ -56,10 +55,9 @@ class PianoContainer extends React.Component {
 
   }
 
-
-
-
   render(){
+
+    /* CREATING THE PIANO KEYS WITH CLICK LISTENERS */
 
     let black_keys = []
     let black_keyNums = [1,3,6,8,10,13,15,18,20,22,25,27,30,32,34]
@@ -81,7 +79,7 @@ class PianoContainer extends React.Component {
         }
         return(
           <li className="white {white_keynote}" onClick={this.handleKeyClick}
-                 value={i}>
+                 value={i} id="key {i}">
           <KeyTile
           key={i}
           id={i}
@@ -105,7 +103,7 @@ class PianoContainer extends React.Component {
         }
         return(
           <li className="black {black_keynote}" onClick={this.handleKeyClick}
-                  value={i}>
+                  value={i} id="key">
           <KeyTile
           key={(i)}
           id={(i)}
@@ -117,6 +115,10 @@ class PianoContainer extends React.Component {
         )
       }
     })
+
+    /* CREATING THE PIANO KEYS WITH CLICK LISTENERS */
+
+    /* ADDING A KEYPRESS LISTENER TO THE DOCUMENT BODY */
 
     var keycodes_for_this = this.state.KEYCODES
     var sound_for_keypress = this.state.keypress_sounds
@@ -147,6 +149,8 @@ class PianoContainer extends React.Component {
         }
       })
     }, false)
+
+    /* ADDING A KEYPRESS LISTENER TO THE DOCUMENT BODY */
 
     return(
 
