@@ -1,7 +1,6 @@
 import React from 'react';
 import Sound from 'react-sound';
 import KeyTile from '../components/KeyTile';
-import ion from 'ion-sound';
 /* import piano_mp3 from '/app/assets/javascripts/piano_mp3' */
 
 
