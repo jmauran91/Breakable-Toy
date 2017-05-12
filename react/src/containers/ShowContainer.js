@@ -13,11 +13,7 @@ class ShowContainer extends React.Component {
   render(){
     return(
       <div>
-      This is the ShowContainer Page
-      <br />
-      <br />
-      <br />
-      <br />
+      <h1 id="show_header"> Play    /|\    Record    /|\    Download </h1>
       <br />
       <br />
       <br />

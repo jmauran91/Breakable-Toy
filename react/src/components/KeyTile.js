@@ -9,9 +9,7 @@ class KeyTile extends React.Component {
 
   render(){
     return(
-      <div className="key" onClick={this.props.handleClick} value={this.props.id}>
-        {this.props.note}{this.props.octave}
-      </div>
+        <p>{this.props.note}{this.props.octave}</p>
 
     )
   }
