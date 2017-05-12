@@ -1,6 +1,6 @@
 import React from 'react';
 var Recorder = require('./recorder.min.js')
-var encoderUrl = './encoderWorker.min.js'
+var encoderUrl = assetHelper["encoderWorker"]
 
 class PianoRecorder extends React.Component {
   constructor(props){
@@ -15,7 +15,6 @@ class PianoRecorder extends React.Component {
     var recorder;
     document.getElementById('init').addEventListener( "click", function(){
       recorder = new Recorder({
-
         encoderPath: encoderUrl
       });
       recorder.addEventListener( "start", function(e){
@@ -95,11 +94,13 @@ class PianoRecorder extends React.Component {
       <button id="dataAvailable"><img src='https://image.flaticon.com/icons/png/512/0/532.png' width='75' height='75'/> </button>
       </div>
 
-      <h2>Recordings</h2>
-      <ul id="recordingslist"></ul>
 
       <h2>Log</h2>
       <pre id="log"></pre>
+
+      <h2>Recordings</h2>
+      <ul id="recordingslist"></ul>
+
 
       </div>
 

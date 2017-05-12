@@ -20,7 +20,22 @@
   text-align: center;
 }
 
+.top-panel{
+  position: relative;
+  margin: auto;
+  width: 65%;
+  min-height: 100vh;
+  background-color: floralwhite;
+  flex-grow: 1;
+
+}
+
 
 body {
-  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/62/49/a5/6249a57bfff076f051ae30f24e9eaa2b.jpg");
+  background-image: url("http://i.imgur.com/0I3ZrB8.jpg");
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
 }
