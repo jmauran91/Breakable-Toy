@@ -1,12 +1,15 @@
 {
   "name": "breakable-toy",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Bare Rails and React app",
   "main": "webpack.config.js",
+  "engines": {
+    "node": "7.9.0"
+  },
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
-    "start": "npm run webpack -- --watch",
-    "test": "node_modules/.bin/karma start react/karma.conf.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "yarn run webpack -- --watch",
     "webpack": "node_modules/.bin/webpack --config ./react/webpack.config.js"
   },
   "author": "",
