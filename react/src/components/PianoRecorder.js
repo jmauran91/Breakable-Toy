@@ -1,5 +1,6 @@
 import React from 'react';
 var Recorder = require('./recorder.min.js')
+var encoderUrl = './encoderWorker.min.js'
 
 class PianoRecorder extends React.Component {
   constructor(props){
@@ -10,15 +11,12 @@ class PianoRecorder extends React.Component {
   }
 
   componentDidMount(){
+
     var recorder;
-    document.getElementById('start').addEventListener( "click", function(){ recorder.start() });
-    document.getElementById('pause').addEventListener( "click", function(){ recorder.pause() });
-    document.getElementById('resume').addEventListener( "click", function(){ recorder.resume() });
-    document.getElementById('stopButton').addEventListener( "click", function(){ recorder.stop() });
-    document.getElementById('dataAvailable').addEventListener("click", function(){ recorder.dataAvailable() });
     document.getElementById('init').addEventListener( "click", function(){
       recorder = new Recorder({
-        encoderPath: "./encoderWorker.min.js"
+
+        encoderPath: encoderUrl
       });
       recorder.addEventListener( "start", function(e){
         screenLogger('Recorder is started');
@@ -69,6 +67,12 @@ class PianoRecorder extends React.Component {
     function screenLogger(text, data) {
       log.innerHTML += "\n" + text + " " + (data || '');
     }
+
+    document.getElementById('start').addEventListener( "click", function(){ recorder.start() });
+    document.getElementById('pause').addEventListener( "click", function(){ recorder.pause() });
+    document.getElementById('resume').addEventListener( "click", function(){ recorder.resume() });
+    document.getElementById('stopButton').addEventListener( "click", function(){ recorder.stop() });
+    document.getElementById('dataAvailable').addEventListener("click", function(){ recorder.dataAvailable() });
   }
 
   render(){
@@ -76,17 +80,20 @@ class PianoRecorder extends React.Component {
 
     return(
       <div>
-      <h1>Encoder example</h1>
+      <div className="command_header">
       <p>Before you enable monitoring, make sure to either plug in headphones or turn the volume down.</p>
       <p>This ogg opus implementation does not support more than 2 channels.</p>
+      </div>
 
-      <h2>Commands</h2>
-      <button id="init"><img src='https://cdn2.iconfinder.com/data/icons/outlined-set-1/29/power-512.png' width='150' height='150'/></button>
-      <button id="start"><img src= 'https://cdn4.iconfinder.com/data/icons/simplicio/128x128/player_record.png' width='150' height='150'/></button>
-      <button id="pause"><img src= 'https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png' width='150' height='150'/></button>
-      <button id="resume"><img src= 'https://maxcdn.icons8.com/Share/icon/Media_Controls//resume_button1600.png' width='150' height='150'/></button>
-      <button id="stopButton"><img src= 'http://freevector.co/wp-content/uploads/2010/07/14740-stop-button1.png' width='150' height='150'/></button>
-      <button id="dataAvailable"><img src='https://image.flaticon.com/icons/png/512/0/532.png' width='150' height='150'/> </button>
+      <h2 id="commands">Commands</h2>
+      <div id="wrapper">
+      <button id="init"><img src='https://cdn2.iconfinder.com/data/icons/outlined-set-1/29/power-512.png' width='75' height='75'/></button>
+      <button id="start"><img src= 'https://cdn4.iconfinder.com/data/icons/simplicio/128x128/player_record.png' width='75' height='75'/></button>
+      <button id="pause"><img src= 'https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png' width='75' height='75'/></button>
+      <button id="resume"><img src= 'https://maxcdn.icons8.com/Share/icon/Media_Controls//resume_button1600.png' width='75' height='75'/></button>
+      <button id="stopButton"><img src= 'http://freevector.co/wp-content/uploads/2010/07/14740-stop-button1.png' width='75' height='75'/></button>
+      <button id="dataAvailable"><img src='https://image.flaticon.com/icons/png/512/0/532.png' width='75' height='75'/> </button>
+      </div>
 
       <h2>Recordings</h2>
       <ul id="recordingslist"></ul>

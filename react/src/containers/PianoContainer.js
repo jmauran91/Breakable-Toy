@@ -78,14 +78,13 @@ class PianoContainer extends React.Component {
           octave = 4
         }
         return(
-          <li className="white {white_keynote}" onClick={this.handleKeyClick}
+          <li className="white {white_keynote} pianokey" onClick={this.handleKeyClick}
                  value={i} id="key {i}">
           <KeyTile
           key={i}
           id={i}
           octave={octave}
           note={white_keynote}
-          handleClick={this.handleKeyClick}
           />
           </li>
         )
@@ -102,14 +101,13 @@ class PianoContainer extends React.Component {
           let octave = 3
         }
         return(
-          <li className="black {black_keynote}" onClick={this.handleKeyClick}
+          <li className="black {black_keynote} pianokey" onClick={this.handleKeyClick}
                   value={i} id="key">
           <KeyTile
           key={(i)}
           id={(i)}
           octave={octave}
           note={black_keynote}
-          handleClick={this.handleKeyClick}
           />
           </li>
         )
@@ -155,7 +153,7 @@ class PianoContainer extends React.Component {
     return(
 
       <div>
-          <ul className="set">
+          <ul className="container">
             {renderKeys}
           </ul>
       </div>
