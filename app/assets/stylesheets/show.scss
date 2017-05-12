@@ -1,6 +1,19 @@
 
+
+
 #show_header {
   text-align: center;
+
+}
+
+.show_container {
+  position: relative;
+  margin: auto;
+  width: 65%;
+  min-height: 100vh;
+  background-color: floralwhite;
+  flex-grow: 1;
+
 }
 
 .PianoContainer {
@@ -33,4 +46,15 @@ h2 {
 
 #log{
   text-align: center;
+}
+
+#recordingslist {
+  text-align: center;
+  justify-content: center;
+}
+
+li {
+  text-align: center;
+  justify-content: center;
+
 }
