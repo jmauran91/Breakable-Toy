@@ -24,7 +24,8 @@ class IndexContainer extends React.Component {
       <br />
       <br />
       <br />
-      <h3> To record a tune, sign up or sign in. Hold ctrl to go down an octave. </h3>
+      <h3> To record a tune, sign up or sign in.  </h3>
+      <h3> Use your mouse or keyboard to play. Using the keyboard, hold ctrl to go down an octave.  </h3>
       </div>
       </div>
     )
