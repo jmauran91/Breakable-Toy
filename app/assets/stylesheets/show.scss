@@ -1,11 +1,4 @@
 
-
-
-#show_header {
-  text-align: center;
-
-}
-
 .show_container {
   position: relative;
   margin: auto;
@@ -13,7 +6,11 @@
   min-height: 100vh;
   background-color: floralwhite;
   flex-grow: 1;
+}
 
+.show_header {
+  text-align: center;
+  justify-content: center;
 }
 
 .PianoContainer {

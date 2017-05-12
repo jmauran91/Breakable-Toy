@@ -1,38 +1,25 @@
 
-
-#index_holder {
-  text-align: center;
-}
-
-#index_header {
-  text-align: center;
-  width: 100%;
-  padding: 10px;
-}
-
-#piano_holder {
-  justify-content: center;
-}
-
-#directions {
-  text-align: center;
-}
-
-.top-panel{
+.index_container {
   position: relative;
   margin: auto;
   width: 65%;
   min-height: 100vh;
   background-color: floralwhite;
   flex-grow: 1;
-
 }
 
+.index_header {
+  text-align: center;
+  justify-content: center;
+}
+
+.warning_holder {
+  text-align: center;
+}
 
 body {
   background-image: url("http://i.imgur.com/XkqxRM9.jpg");
   height: 100%;
-
   display: flex;
   flex-direction: column;
   flex-shrink: 0;

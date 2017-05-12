@@ -13,7 +13,7 @@ class ShowContainer extends React.Component {
   render(){
     return(
       <div className="show_container">
-      <h1 id="show_header"> Play    /|\    Record    /|\    Download </h1>
+      <h1 className="show_header"> Play    /|\    Record    /|\    Download </h1>
       <br />
       <br />
       <br />
@@ -24,7 +24,6 @@ class ShowContainer extends React.Component {
       <PianoRecorder />
       </div>
       </div>
-
     )
   }
 }
