@@ -9,7 +9,7 @@ class KeyTile extends React.Component {
 
   render(){
     return(
-        <p>{this.props.note}{this.props.octave}</p>
+        <p>  </p>
 
     )
   }
