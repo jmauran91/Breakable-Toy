@@ -24,6 +24,9 @@ class IndexContainer extends React.Component {
       <br />
       <br />
       <br />
+      <div className="mobile_header">
+      <h1> For more, go to: breakable-piano.herokuapp.com </h1>
+      </div>
       <div className="instructions_holder">
       <h3> To record a tune, sign up or sign in.  </h3>
       <h3> Use your mouse or keyboard to play. </h3>
