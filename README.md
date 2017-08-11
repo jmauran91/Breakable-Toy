@@ -7,3 +7,7 @@ one octave. Signing in or signing up directs you to a page on which you can reco
 the music you're playing and then download it in an .ogg file. Some of this functionality
 does not translate perfectly to Windows laptops, touch-screens or screens with unusual
 screen dimensions, but it will soon!
+
+(Warning: Works best on Google Chrome)
+
+Heroku: breakable-piano.herokuapp.com
