@@ -30,7 +30,8 @@ class IndexContainer extends React.Component {
       <div className="instructions_holder">
       <h3> To record a tune, sign up or sign in.  </h3>
       <h3> Use your mouse or keyboard to play. </h3>
-      <h3> Using the keyboard, hold ctrl to go down an octave.  </h3>
+      <h3> Using the computer keyboard, hold ctrl to go down an octave.  </h3>
+      <h3> Warning: works best on Google Chrome </h3>
       </div>
       </div>
       </div>
