@@ -8,6 +8,10 @@
   flex-grow: 1;
 }
 
+.show_container {
+
+}
+
 .index_header {
   text-align: center;
   justify-content: center;
@@ -15,6 +19,11 @@
 
 .warning_holder {
   text-align: center;
+}
+
+body, div, h1, h3 {
+  font-family: 'Encode Sans Expanded', sans-serif;
+
 }
 
 .instructions_holder {

@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
+
 
 
     <%= csrf_meta_tags %>
@@ -15,6 +17,9 @@
 
 <body>
   <div class ="top-bar">
+    <div class="top-bar-left">
+      <%= link_to "Home", root_path %>
+    </div>
     <div class="top-bar-right">
       <ul class="menu">
           <% if user_signed_in? %>
